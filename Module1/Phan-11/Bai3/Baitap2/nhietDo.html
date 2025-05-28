@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let celsius = +prompt("Nhap nhiet do vao day");
+  while (celsius > 100 || celsius < 20) {
+    if (celsius > 100) {
+      document.write("Giam nhiet do xuong")
+    } else if (celsius < 20) {
+      document.write("Tang nhiet do len")
+    }
+    celsius = +prompt("Nhap lai nhiet do vao day");
+  }
+    document.write("Nhiet do la: " + celsius);
+</script>
+</body>
+</html>

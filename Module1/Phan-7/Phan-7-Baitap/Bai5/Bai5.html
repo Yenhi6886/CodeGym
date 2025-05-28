@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form>
+  <input type="number" id="number" placeholder="Gia tri 1">
+    <input type="number" id="numberTwo" placeholder="Gia tri 2"> <br>
+
+  <button type="button" onclick="calculateCong()">Addition(+)</button>
+    <button type="button" onclick="calculateTru()">Subtraction(-)</button>
+    <p id="result"></p>
+</form>
+
+<script>
+    function calculateCong() {
+        let number = +document.getElementById("number").value;
+        let numberTwo = +document.getElementById("numberTwo").value;
+        let result = number + numberTwo;
+        document.getElementById("result").innerHTML = result;
+    }
+    function calculateTru() {
+        let number = +document.getElementById("number").value;
+        let numberTwo = +document.getElementById("numberTwo").value;
+        let result = number - numberTwo;
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+
+</body>
+</html>

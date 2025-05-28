@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function insertDash(s) {
+        return s.replace(/([02468])(?=[02468])/g, '$1-');
+        //.replace(pattern, replacement)
+        // /.../: regex; g:global-tim cac vitri khop trog chuoi; [] nhóm bắt-nhớ lại cái mình tìm dc
+        // (?=...) :lookahead-kiểm tra xem sau cái mình tìm có cái gì
+        // $1: thay thế cái mình tìm bằng chính nó
+    }
+
+    const input = prompt("Nhập chuỗi số lien tiep:");
+    console.log("Kết quả:", insertDash(input));
+
+</script>
+</body>
+</html>

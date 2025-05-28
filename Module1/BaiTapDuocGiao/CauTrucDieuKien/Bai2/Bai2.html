@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  let diemKiemTra = +prompt("Nhap vao diem kiem tra");
+  let diemGiuaKi = +prompt("Nhap vao diem giua ki") ;
+  let diemCuoiKi = +prompt("Nhap vao diem cuoi ki") ;
+  let diemTB = (diemKiemTra + diemGiuaKi + diemCuoiKi)/3;
+
+  if (diemTB >=8) {
+    alert("Xep loai gioi");
+  } else if (diemTB >= 7.5) {
+    alert("Xep loai kha");
+  } else if (diemTB >= 6.5) {
+    alert("Xep loai trung binh");
+  } else {
+    alert("Xep loai yeu");
+  }
+
+</script>
+
+</body>
+</html>

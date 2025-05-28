@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let num = +prompt("Nhập số bất kỳ");
+  let total = 0;
+
+  while (num != -1) {
+    // num = Number(num); neu o tren chuwa chuyen du lieu
+    total += num;
+
+    alert("Tổng hiện tại: " + total);
+
+    num = +prompt("Nhập số bất kỳ (hoặc -1 để thoát)");
+  }
+
+
+</script>
+</body>
+</html>

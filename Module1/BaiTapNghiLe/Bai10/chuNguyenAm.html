@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhap chuoi vao day");
+
+    function checkString(str) {
+        if (!isNaN(str)) {
+            alert("Vui long nhap chuoi chu");
+        }
+
+        let arr = ['u', 'o', 'e', 'a', 'i'];
+        let result = [];
+        for (let i = 0; i < str.length; i++) {
+            if (arr.includes(str[i]) && !result.includes(str[i])) {
+                result.push(str[i]);
+            }
+        }
+        return result;
+    }
+
+    alert(checkString(input));
+</script>
+</body>
+</html>

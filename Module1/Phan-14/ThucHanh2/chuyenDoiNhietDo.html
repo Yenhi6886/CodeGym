@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <label>Fahrenheit</label>
+    <input type="number" id="fahrenheit" placeholder="Nhập độ F"
+           oninput="convertToCelsius(this.value)"
+           onchange="convertToCelsius(this.value)">;
+</p>
+<p>Celius: <span id="inRaDoC"></span></p>
+
+<script>
+function convertToCelsius(valNum) {
+    valNum = parseFloat(valNum);
+    document.getElementById("inRaDoC").innerHTML = ((valNum - 32)/1.8).toFixed(3);
+}
+</script>
+</body>
+</html>

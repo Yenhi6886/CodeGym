@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script.js" defer ></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div>
+    <h2>Quản lí sách</h2>
+</div>
+
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Mã số sách</th>
+            <th>Tên sách</th>
+            <th>Năm xuất bản</th>
+            <th>Số quyển</th>
+            <th>Tình trạng</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--Dữ liệu sách-->
+        </tbody>
+    </table>
+</div>
+
+<div class="button-container">
+    <button onclick="addBook()"> Thêm sách đã có</button>
+    <button onclick="addNewBook()">Thêm sách mới</button>
+    <button onclick="borrowBook()"> Mượn sách</button>
+    <button onclick="showMaxBook()">Hiển thị sách nhiều nhất</button>
+</div>
+</body>
+</html>

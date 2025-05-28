@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhap so luong phan tu");
+    if (n % 2 !== 0) {
+        alert("Yeu cau do dai phan tu la so chan");
+    } else {
+        let arr = prompt("Nhap mang").split(",").map((Number));
+        if (arr.length !== n) {
+            alert(`Vui long nhap dung ${n} phan tu`);
+        }
+        let lienKe = false;
+        for (let i = 0; i < arr.length; i += 2) {
+            if (arr[i] < arr[i + 1]) {
+                lienKe = true;
+            }
+        }
+        if (lienKe) {
+            alert("OK")
+        } else {
+            alert("NO")
+        }
+    }
+</script>
+</body>
+</html>

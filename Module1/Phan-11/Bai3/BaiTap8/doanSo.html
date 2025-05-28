@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="doanxem()">Bat dau</button>
+
+<script>
+    function doanxem() {
+      let soMuonDoan = +prompt("Nhap so muon doan trong khoang");
+      let soNgauNhien = Math.floor(Math.random() * soMuonDoan);
+      console.log(soNgauNhien);
+      let soDoan = +prompt("Nhap so doan");
+      for (let i = 0; i <3; i++) {
+        if (soDoan === soNgauNhien) {
+          document.write("Ban da doan dung so " + soNgauNhien);
+          break;
+      } else if (soDoan > soNgauNhien) {
+          alert("So ban doan lon hon so ngau nhien");
+          soDoan = +prompt("Nhap so doan");
+        } else {
+          alert("So ban doan nho hon so ngau nhien");
+          soDoan = +prompt("Nhap so doan");
+        }
+      }
+      alert("Ban het so lan doan");
+
+    }
+</script>
+</body>
+</html>

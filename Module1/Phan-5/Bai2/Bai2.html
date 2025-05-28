@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai2</title>
+</head>
+<style>
+h1 {
+    background-color: coral;
+    text-align: center;
+}
+.Hocvien {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    width: 400px;
+    background-color: #ffffcc;
+    padding: 20px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+}
+h2 {
+    background-color: #ccffff;
+    color: blue;
+    padding: 10px;
+    margin: -20px -20px 20px -20px;
+}
+label {
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.namehobby, .emailhobby, #hobby {
+    color: blue;
+}
+.box {
+    border: 30px solid #e6f5ff;
+    padding: 0 10px 10px 10px;
+    margin-top: 10px;
+    background-color: transparent;
+}
+
+
+</style>
+
+<body>
+
+<div class="box">
+<h1>SỞ THÍCH CỦA BẠN</h1>
+<form>
+    <label for="name" class="namehobby" >Họ và tên</label>
+    <input type="text" name="name"><br>
+
+    <label for="email" class="emailhobby" >Email</label>
+    <input type="email" name="email"><br>
+    <label for="hobby" id="hobby">Sở thích</label>
+
+    <input type="checkbox" id="sport" name="hobby" value="sport" >
+    <label for="sport"  >Thể thao</label>
+    <input type="checkbox" id="music" name="hobby" value="music" >
+    <label for="music">Âm nhạc</label>
+    <input type="checkbox" id="readbook" name="hobby" value="readbook" >
+    <label for="readbook">Đọc sách</label> <br>
+    <input type="checkbox" id="web" name="hobby" value="web" >
+    <label for="web">Lướt web</label>
+    <input type="checkbox" id="game" name="hobby" value="game" >
+    <label for="game">Chơi game</label> <br>
+    <input type="checkbox" id="cinema" name="hobby" value="cinema" >
+    <label for="cinema">Điện ảnh</label>
+    <input type="checkbox" id="travel" name="hobby" value="travel" >
+    <label for="travel">Du lịch</label> <br>
+    <input type="submit" value="Gửi thông tin">
+    <input type="reset" value="Nhập lại">
+</form>
+</div>
+
+<div class="Hocvien">
+<h2>ĐĂNG KÝ HỌC VIÊN</h2>
+<form>
+    <label for="name">Họ và tên</label>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="dob">Ngày sinh</label>
+    <input type="text" placeholder="dd/mm/yyyy" id="dob" name="dob"><br>
+
+    <label>Giới tính</label>
+    <span class="gender">
+        <input type="radio" name="gender" value="Nam"> Nam
+        <input type="radio" name="gender" value="Nữ"> Nữ
+      </span><br>
+
+    <label for="address">Địa chỉ</label><br>
+    <textarea id="address" name="address" rows="3" cols="35"></textarea><br>
+
+    <label for="class">Lớp</label>
+    <select id="class" name="class">
+        <option>— Chọn lớp —</option>
+        <option>Lớp 1</option>
+        <option>Lớp 2</option>
+        <option>Lớp 3</option>
+    </select><br>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="phone">Điện thoại</label>
+    <input type="text" id="phone" name="phone"><br>
+
+    <div class="buttons">
+        <input type="submit" value="Đăng ký">
+        <input type="reset" value="Nhập lại">
+    </div>
+
+</form>
+</div>
+</body>
+</html>

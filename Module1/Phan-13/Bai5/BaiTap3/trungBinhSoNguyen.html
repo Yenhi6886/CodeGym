@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  let arr = [ 3,77,65,4,35,2,1,6,4,5];
+  let max= arr[0];
+  let total = 0;
+
+  for ( i = 1 ; i< arr.length ; i++) {
+    if ( arr[i] > max) {
+    max = arr[i];
+      }
+  }
+  for ( i = 0 ; i< arr.length ; i++) {
+    total += arr[i];
+  }
+  let tBC = total / arr.length;
+
+  alert("Giá trị lớn nhất là: " + max);
+  document.write("Trung bình cộng của mảng là: " + tBC);
+
+</script>
+</body>
+</html>

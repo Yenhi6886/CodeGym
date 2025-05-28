@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ngoiSao = prompt("Nhập tên ngôi sao ");
+    let arrNgoisao = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let arrChomsao = ['Ursa Minor', 'Taurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function timChomSaoTuongUng(text) {
+        for (let i = 0; i < arrNgoisao.length; i++) {
+            if (text === arrNgoisao[i]) {
+                return arrChomsao[i];
+            }
+        }
+        return "Không tìm thấy";
+    }
+
+    document.write(timChomSaoTuongUng(ngoiSao));
+</script>
+</body>
+</html>

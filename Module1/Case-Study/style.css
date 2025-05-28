@@ -1,0 +1,212 @@
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white; !* nền xám rất nhạt *!
+    color: #333;
+}
+
+.header {
+    background-color: #ddd; !* xám nhạt *!
+    padding: 16px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content {
+    padding: 24px;
+}
+
+h3 {
+    margin: 16px 0 8px;
+    font-size: 18px;
+}
+
+!* Input + Select *!
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+}
+
+!* Nút bấm *!
+button {
+    padding: 8px 16px;
+    margin: 8px 4px 8px 0;
+    background-color: #bbb; !* xám trung tính *!
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+!* Bảng *!
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+th {
+    background-color: #eee; !* xám sáng cho tiêu đề *!
+}
+
+img {
+    max-width: 60px;
+    border-radius: 4px;
+}
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff8f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background-color: #ff9a9e;
+    padding: 24px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Content container */
+.content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+/* Headings */
+.content h3, #total-products h2 {
+    margin-bottom: 18px;
+    color: #cc3366;
+    font-weight: bold;
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #fffdfd;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+#add-product-btn,
+#filter-btn {
+    background-color: #ff69b4;
+    color: white;
+
+    margin-bottom: 15px;
+
+}
+
+#add-product-btn:hover,
+#filter-btn:hover {
+    background-color: #ff85c1;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+th {
+    background-color: #ffe4ec;
+    color: #cc3366;
+}
+
+tr:hover {
+    background-color: #fff2f6;
+}
+
+/* Ảnh sản phẩm */
+td img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Sửa / Xóa */
+td button {
+    margin: 4px;
+    padding: 8px 14px;
+}
+
+td button:nth-child(1) {
+    background-color: #4caf50;
+    color: white;
+}
+
+td button:nth-child(2) {
+    background-color: #f44336;
+    color: white;
+}
+
+.search-filter-sort h3 {
+    margin-top: 18px;
+}
+

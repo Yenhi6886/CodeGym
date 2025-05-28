@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+Vat ly
+<input type="number" id="vatly"> <br>
+Hoa hoc
+<input type="number" id="hoahoc"> <br>
+Sin hoc
+<input type="number" id="sinhoc"> <br>
+
+<button onclick="getDiem ()">Diem</button>
+<p id="diemTb"></p>
+<p id="diemTong"></p>
+
+<script>
+  function getDiem() {
+    let vatLy = +document.getElementById("vatly").value;
+    let hoaHoc = +document.getElementById("hoahoc").value;
+    let sinhHoc = +document.getElementById("sinhoc").value;
+    let trungBinh = (vatLy + hoaHoc + sinhHoc)/3 ;
+    trungBinh = trungBinh.toFixed(2);
+    let tong = vatLy + hoaHoc + sinhHoc;
+    tong = tong.toFixed(2);
+
+    document.getElementById("diemTb").innerHTML = "Diem trung binh: " + trungBinh;
+    document.getElementById("diemTong").innerHTML = "Diem tong " + tong;
+  }
+</script>
+
+
+</body>
+</html>

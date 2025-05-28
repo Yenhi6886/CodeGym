@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="result"></div>
+
+<script>
+
+    let arr = [2,5,33,55,34,6,7,3,99,10];
+
+    let lonHon10 = [];
+    let nhoHon10 = [];
+    let bang10 = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 10) {
+            lonHon10.push(arr[i]);
+        } else if (arr[i] < 10) {
+            nhoHon10.push(arr[i]);
+        } else {
+            bang10.push(arr[i]);
+        }
+    }
+
+    let result = "";
+    result += "Các số lớn hơn 10 là: " + lonHon10.join(", ") + "<br>";
+    result += "Các số nhỏ hơn 10 là: " + nhoHon10.join(", ") + "<br>";
+    result += "Các số bằng 10 là: " + bang10.join(", ") + "<br>";
+
+    document.getElementById("result").innerHTML = result;
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap = prompt("Nhập số có 4 chữ số:");
+
+    function findMaxNumber(n) {
+        n = n.toString();
+        if (n.length !== 4 || isNaN(n)) {
+            return -1;
+        }
+        let arr = [];
+        for (let i = 0; i < 4; i++) {
+            let number = n.slice(0, i) + n.slice(i + 1);
+            arr.push(Number(number));
+        }
+        return Math.max(...arr);
+    }
+
+    alert(findMaxNumber(nhap));
+</script>
+</body>
+</html>

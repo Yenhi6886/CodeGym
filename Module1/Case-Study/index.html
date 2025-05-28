@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Bánh Kem</title>
+    <script defer src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+    <h1>Thế giới bánh kem</h1>
+</header>
+
+<div class="content">
+    <section>
+        <div id="total-products">
+            <h2>Tổng số sản phẩm hiện tại: 0 món</h2>
+        </div>
+
+        <div id="add-product-form">
+            <h3>Thêm sản phẩm mới</h3>
+            <input id="product-name" placeholder="Tên sản phẩm" type="text">
+            <input accept="image/*" id="product-image" type="file">
+            <input id="product-price" placeholder="Giá sản phẩm" type="number">
+            <button id="add-product-btn">Thêm sản phẩm</button>
+        </div>
+
+        <div id="product-list">
+            <h3>Danh sách sản phẩm</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Ảnh sản phẩm</th>
+                    <th>Giá sản phẩm</th>
+                    <th>Hành động</th>
+                </tr>
+                </thead>
+                <tbody id="product-table-body">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div id="search-filter-sort">
+            <h3>Tìm kiếm / Lọc / Sắp xếp</h3>
+            <input id="search-name" placeholder="Tìm theo tên sản phẩm" type="text">
+            <input id="filter-min-price" placeholder="Giá thấp nhất" type="number">
+            <input id="filter-max-price" placeholder="Giá cao nhất" type="number">
+            <button id="filter-btn">Lọc giá</button>
+            <select id="sort-price">
+                <option value="">-- Sắp xếp theo giá --</option>
+                <option value="asc">Tăng dần</option>
+                <option value="desc">Giảm dần</option>
+            </select>
+        </div>
+    </section>
+</div>
+</body>
+</html>

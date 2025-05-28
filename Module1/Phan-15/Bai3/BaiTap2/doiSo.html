@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="getNumber()">
+<p id="hienThi"></p>
+<script>
+    function getNumber() {
+        let number = +prompt("Nhập vào 1 số");
+        number += 1;
+        document.getElementById("hienThi").innerHTML = "So hien thi sau tang la: " + number;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<button id="add-hoc-vien" type="button">Thêm mới học viên</button>-->
+<!--<button id="edit-hoc-vien" type="button">Sửa thông tin học viên</button>-->
+<!--<button id="delete-hoc-vien" type="button">Xóa học viên</button>-->
+<!--<table border="1">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>Mã học viên</th>-->
+<!--        <th>Tên</th>-->
+<!--        <th>Lớp</th>-->
+<!--        <th>Email</th>-->
+<!--        <th>Ngày sinh</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody id="quanLyHocVien">-->
+
+<!--    </tbody>-->
+<!--</table>-->
+<!--<script>-->
+<!--    function dungChung() {-->
+<!--        let MSV = prompt("Nhap ma hoc vien");-->
+<!--        let name = prompt("Nhap ten hoc vien");-->
+<!--        let lop = prompt("Nhap lop hoc");-->
+<!--        let email = prompt("Nhap email");-->
+<!--        let birthday = prompt("Nhap ngay sinh");-->
+<!--        return {MSV, name, lop, birthday, email};-->
+<!--    }-->
+
+<!--    document.getElementById("add-hoc-vien").onclick = function () {-->
+<!--        let add = dungChung();-->
+
+<!--        let trungLap = document.querySelector(`tr[data-msv="${add.MSV}]`);-->
+<!--        if (trungLap) {-->
+<!--            alert("Đã tồn tại mã học viên này");-->
+<!--            return;-->
+<!--        }-->
+
+<!--        let row = `-->
+<!--        <tr data-msv="${add.MSV}">-->
+<!--            <td>${add.MSV}</td>-->
+<!--            <td>${add.name}</td>-->
+<!--            <td>${add.lop}</td>-->
+<!--            <td>${add.email}</td>-->
+<!--            <td>${add.birthday}</td>-->
+<!--        </tr>-->
+<!--        `;-->
+<!--        document.getElementById("quanLyHocVien").innerHTML += row;-->
+
+<!--    }-->
+<!--    document.getElementById("edit-hoc-vien").onclick = function () {-->
+<!--        let input = prompt("Nhap ma hoc vien");-->
+<!--        let row = document.querySelector(`tr[data-msv="${input}"]`);-->
+<!--        if (!row) {-->
+<!--            alert("Mã học viên không tồn tại");-->
+<!--            return;-->
+<!--        }-->
+
+<!--        let edit = dungChung();-->
+<!--        row.innerHTML = `-->
+<!--            <td>${edit.MSV}</td>-->
+<!--            <td>${edit.name}</td>-->
+<!--            <td>${edit.lop}</td>-->
+<!--            <td>${edit.email}</td>-->
+<!--            <td>${edit.birthday}</td>-->
+<!--        `;-->
+<!--        row.setAttribute("data-msv", edit.MSV);-->
+<!--    }-->
+
+<!--    document.getElementById("delete-hoc-vien").onclick = function () {-->
+<!--        let input = prompt("Nhap ma hoc vien");-->
+<!--        let row = document.querySelector(`tr[data-msv="${input}"]`);-->
+<!--        if (!row) {-->
+<!--            alert("Mã học viên không tồn tại");-->
+<!--            return;-->
+<!--        }-->
+<!--        let chacChan = confirm("Bạn chắc chắn muốn xóa học viên " + input + " không?")-->
+<!--        if (chacChan) {-->
+<!--            row.remove();-->
+<!--            return;-->
+<!--        }-->
+<!--    }-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý học viên</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        button {
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Hệ thống quản lý học viên</h1>
+
+<button onclick="themHocVien()">Thêm mới học viên</button>
+<button onclick="suaHocVien()">Sửa thông tin học viên</button>
+<button onclick="xoaHocVien()">Xóa học viên</button>
+
+<table id="bangHocVien">
+    <thead>
+    <tr>
+        <th>Mã HV</th>
+        <th>Tên</th>
+        <th>Lớp</th>
+        <th>Email</th>
+        <th>Ngày sinh</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    let danhSachHocVien = [];
+
+    function hienThiHocVien() {
+        const tbody = document.querySelector("#bangHocVien tbody");
+        tbody.innerHTML = ""; // Xóa dữ liệu cũ
+        danhSachHocVien.forEach(hv => {
+            const row = `<tr>
+                      <td>${hv.ma}</td>
+                      <td>${hv.ten}</td>
+                      <td>${hv.lop}</td>
+                      <td>${hv.email}</td>
+                      <td>${hv.ngaySinh}</td>
+                    </tr>`;
+            tbody.innerHTML += row;
+        });
+    }
+
+    function themHocVien() {
+        const ma = prompt("Nhập mã học viên:");
+        if (!ma) return;
+        if (danhSachHocVien.find(hv => hv.ma === ma)) {
+            alert("Mã học viên đã tồn tại!");
+            return;
+        }
+        const ten = prompt("Nhập tên học viên:");
+        const lop = prompt("Nhập lớp:");
+        const email = prompt("Nhập email:");
+        const ngaySinh = prompt("Nhập ngày sinh (dd/mm/yyyy):");
+
+        danhSachHocVien.push({ ma, ten, lop, email, ngaySinh });
+        hienThiHocVien();
+    }
+
+    function suaHocVien() {
+        const ma = prompt("Nhập mã học viên cần sửa:");
+        const index = danhSachHocVien.findIndex(hv => hv.ma === ma);
+        if (index === -1) {
+            alert("Mã học viên không tồn tại.");
+            return;
+        }
+        const ten = prompt("Nhập tên mới:", danhSachHocVien[index].ten);
+        const lop = prompt("Nhập lớp mới:", danhSachHocVien[index].lop);
+        const email = prompt("Nhập email mới:", danhSachHocVien[index].email);
+        const ngaySinh = prompt("Nhập ngày sinh mới:", danhSachHocVien[index].ngaySinh);
+
+        danhSachHocVien[index] = { ma, ten, lop, email, ngaySinh };
+        hienThiHocVien();
+    }
+
+    function xoaHocVien() {
+        const ma = prompt("Nhập mã học viên cần xóa:");
+        const index = danhSachHocVien.findIndex(hv => hv.ma === ma);
+        if (index === -1) {
+            alert("Mã học viên không tồn tại.");
+            return;
+        }
+        const xacNhan = confirm("Bạn có chắc chắn muốn xóa học viên này không?");
+        if (xacNhan) {
+            danhSachHocVien.splice(index, 1);
+            hienThiHocVien();
+        }
+    }
+
+    // Gọi hiển thị ban đầu
+    hienThiHocVien();
+</script>
+
+</body>
+</html>

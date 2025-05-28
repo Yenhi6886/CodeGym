@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập số lượng phần tử của mảng");
+    let input = prompt("Nhap mang so nguyen").split(",").map(Number);
+    if (input.length !== n) {
+        alert("Vui long nhap dung so luong phan tu");
+    } else {
+        let giam = true;
+        for (let i = 0; i < n - 1; i++) {
+            if (input[i] <= input[i + 1]) {
+                giam = false;
+                break;
+            }
+        }
+
+        if (giam) {
+            alert("OK");
+        } else {
+            alert("NO");
+        }
+    }
+
+
+</script>
+</body>
+</html>

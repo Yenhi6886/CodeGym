@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [2,4,9, 22,55, 1, 3, 5, 7, 8, 10];
+    //Bai1.1
+    /*
+    let total = 0;
+    for (i = 0; i < arr.length; i++) {
+      total+= arr[i];
+    }
+    alert(total);*/
+
+    //bai1.2
+   /* let max = arr[0];
+    for (i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    alert(max);*/
+
+    //bai1.3
+   /* let soChan =[];
+    let soLe = [];
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            soChan.push(arr[i]);
+        } else {
+            soLe.push(arr[i]);
+        }
+    }
+    document.write(`So chan la: ${soChan} <br>`);
+    document.write(`So le la: ${soLe} <br>`);*/
+
+    //bai1.4
+   /* arr.sort((a, b) => a - b);
+    document.write(`Tang dan ${arr} <br>`);
+    arr.sort((a, b) => b - a);
+    document.write(`Giam dan ${arr} <br>`);*/
+
+    //bai1.5
+   /* let arr2 = [ 2,6,8,45,36,86,10,3,5,33];
+    let arr3 = [...new Set(arr.concat(arr2))];
+    alert(arr3);*/
+
+    //bai1.6
+   /* let arr2 = ['VietNam', 'HoaBinh', 'HaNoi', 'a', 'b', 'c', 'd', 'e'];
+    let result = arr2.filter(function(item) {
+        return item.length > 3;
+    });
+    alert(result);*/
+
+
+</script>
+</body>
+</html>

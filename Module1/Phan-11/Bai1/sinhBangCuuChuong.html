@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // in 1 bang cuu chuong bat ki
+    /* let i = 1;
+    let number = 1;
+    let sout = "<table border ='1' width = '120' cellspacing = '1' cellpadding = '3'>";
+
+    while ( i < 10) {
+        sout += "<tr>";
+        sout += "<td>" + number + " * " + i + ' = ' + ( number * i )+ "</td>";
+        sout += "</tr>";
+        i++;
+    }
+    sout += "</table>";
+    document.write(sout);*/
+
+    // in ra 9 bang cuu chuong
+    let bang = "";
+    for ( i =1; i<10; i++) {
+        bang += "<table border = '1' width = '100'  style = 'float:left /* ; marrgin-right:5px */'>";
+        for (j =1; j<10; j ++) {
+            bang += "<tr>";
+            bang += "<td>"+ i + "  * " + j + " = "+ (i*j) +"</td>";
+            bang += "</tr>";
+        }
+        bang += "</table>";
+    }
+    document.write(bang);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Toggles</title>
+  <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 20px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: #fff;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+  </style>
+</head>
+<body>
+
+<label>
+  <div class="switch">
+    <input type="checkbox" id="good" checked>
+    <span class="slider"></span>
+  </div>
+  GOOD
+</label><br><br>
+
+<label>
+  <div class="switch">
+    <input type="checkbox" id="cheap" checked>
+    <span class="slider"></span>
+  </div>
+  CHEAP
+</label><br><br>
+
+<label>
+  <div class="switch">
+    <input type="checkbox" id="fast">
+    <span class="slider"></span>
+  </div>
+  FAST
+</label>
+
+<script>
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      const checked = Array.from(checkboxes).filter(cb => cb.checked);
+
+      if (checked.length > 2) {
+        const toUncheck = checked.find(cb => cb !== checkbox);
+        toUncheck.checked = false;
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Ignore these directories anywhere in the repo
+**/build/
+**/.idea/
+**/.gradle/
+
+# Also ignore in root (optional)
+build/
+.idea/
+.gradle/
+

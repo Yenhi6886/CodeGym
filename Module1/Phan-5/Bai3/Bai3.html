@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Research Survey</title>
+</head>
+<body>
+
+<div class="Survey-container">
+
+    <h2>Market Reseach Survey</h2>
+    <p>Please take a few moments to complete this satisfaction survey.</p> <hr>
+    <form>
+        <label for="age" id="age-label" >What is your age range?</label> <br>
+        <select id="age" name="age" style="width: 50%">
+            <option value="18-24">18–24</option>
+            <option value="25-34">25–34</option>
+            <option value="35-50">35–50</option>
+            <option value="50+">50+</option>
+        </select> <br>
+
+        <label for="income" id="income-label" >What is your age range?</label> <br>
+        <select id="income" name="income" style="width: 50%">
+            <option value="$0-$25,000">$0-$25,000</option>
+            <option value="$25,001-$50,000">$25,001–$50,000</option>
+            <option value="$50,001-$100,000">$50,001-$100,000</option>
+            <option value="$100,000+">$100,000+</option>
+        </select> <br>
+
+        Gender Identity: <br>
+        <input type="radio" id="male-gender" name="gender" value="male">
+        <label for="male-gender">Male</label> <br>
+        <input type="radio" id="female-gender" name="gender" value="female">
+        <label for="female-gender">Female</label><br>
+
+        Which of the following products have your purchased in the last 2 months. Please check all that apply. <br>
+        <input type="checkbox" id="product1" name="product" value="product1">
+        <label for="product1">Product 1</label> <br>
+        <input type="checkbox" id="product2" name="product" value="product2">
+        <label for="product2">Product 2</label> <br>
+        <input type="checkbox" id="product3" name="product" value="product3">
+        <label for="product3">Product 3</label> <br>
+
+        How often would you use our new product? <br>
+        <label for="daily-often"><input type="radio" id="daily-often" name="often" value="daily"> Daily</label> <br>
+        <input type="radio" id="weekly-often" name="often" value="weekly">
+        <label for="weekly-often">Weekly</label><br>
+        <input type="radio" id="monthly-often" name="often" value="monthly">
+        <label for="monthly-often">Monthly</label><br>
+
+        What would you pay for the new product? <br>
+        <label>$</label>
+        <input type="number" id="dollars-product-new" name="product-new" value="dollars" >
+        <label>.</label>
+        <input type="number" id="cents-new-pay" name="product-new" value="cents"> <br>
+        <span id="dollars-product-new-label">Dollars</span>
+        <span id="cents-new-pay-label">Cents.</span> <br>
+
+        <label for="address">What features would you like to see in the new product.</label><br>
+        <textarea id="address" name="address" style="width: 100%; height: 100Px" ></textarea><br>
+
+        <p>Please rate your level of agreement with the following statemens.</p>
+        <table border="1px" style="width: 100%; text-align: center ">
+            <tr>
+                <th></th>
+                <th>Strongly Disagree</th>
+                <th>Disagree</th>
+                <th>Agree</th>
+                <th>Strongly Agree</th>
+            </tr>
+            <tr>
+                <td>Our products are priced fairly</td>
+                <td><label for="tick-price1"><input type="radio" id="tick-price1" name="tick" value="price1"><br> 1</label></td>
+                <td><label for="tick-price2"><input type="radio" id="tick-price2" name="tick" value="price2"><br> 2</label></td>
+                <td><label for="tick-price3"><input type="radio" id="tick-price3" name="tick" value="price3"><br> 3</label></td>
+                <td><label for="tick-price4"><input type="radio" id="tick-price4" name="tick" value="price4"><br> 4</label></td>
+            </tr>
+            <tr>
+                <td>Our products are high quality</td>
+                <td><label for="tick-quality1"><input type="radio" id="tick-quality1" name="tick" value="quality1"><br> 1</label></td>
+                <td><label for="tick-quality2"><input type="radio" id="tick-quality2" name="tick" value="quality2"><br> 2</label></td>
+                <td><label for="tick-quality3"><input type="radio" id="tick-quality3" name="tick" value="quality3"><br> 3</label></td>
+                <td><label for="tick-quality4"><input type="radio" id="tick-quality4" name="tick" value="quality4"><br> 4</label></td>
+            </tr>
+            <tr>
+            <td>You would recommend our product to a friend or coworker</td>
+            <td><label for="tick-recommend1"><input type="radio" id="tick-recommend1" name="tick" value="recommend1"><br> 1</label></td>
+            <td><label for="tick-recommend2"><input type="radio" id="tick-recommend2" name="tick" value="recommend2"><br> 2</label></td>
+            <td><label for="tick-recommend3"><input type="radio" id="tick-recommend3" name="tick" value="recommend3"><br> 3</label></td>
+            <td><label for="tick-recommend4"><input type="radio" id="tick-recommend4" name="tick" value="recommend4"><br> 4</label></td>
+        </tr>
+        </table>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="search" placeholder="Nhập từ cần tra">
+<button type="button" onclick="translateTudien()">Tìm từ</button>
+<p id="result"></p>
+
+<script>
+    const translateEng = ["hello", "goodbye", "thank you", "please"];
+    const translateVn = ["xin chào", "tạm biệt", "cảm ơn", "làm ơn"];
+
+    function translateTudien() {
+        const input = document.getElementById("search").value.trim().toLowerCase();
+        const result = document.getElementById("result");
+        if (!input) {
+            result.innerText = "Vui lòng nhập một từ.";
+            return;
+        }
+
+        const index = translateEng.indexOf(input);
+        if (index !== -1) {
+            result.innerText = "Nghĩa tiếng Việt: " + translateVn[index];
+        } else {
+            result.innerText = "Không tìm thấy.";
+        }
+    }
+</script>
+
+</body>
+</html>

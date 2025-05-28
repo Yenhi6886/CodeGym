@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Adam & Eva và quả táo</title>
+</head>
+<body>
+<h1>Đọc truyên!!!!!</h1>
+<script>
+  // Lớp Apple
+  class Apple {
+    #weight;
+    constructor() {
+      this.#weight= 10;
+    }
+    getWeight() {
+      return this.#weight;
+    }
+    isEmpty() {
+      return this.#weight <=0;
+     }
+    decrease() {
+      if (!this.isEmpty()) {
+        this.#weight -= 1;
+      }
+    }
+  }
+
+  // Lớp Human
+  class Human {
+    constructor(name, gender, weight) {
+      this.name = name;
+      this.gender = gender;
+      this.weight = weight;
+    }
+
+    say(loiThoai) {
+      document.write(`${this.name} nói: "${loiThoai}" <br>`);
+    }
+
+    eat(apple) { //Người sẽ ăn táo
+      if (!apple.isEmpty()) {
+        apple.decrease(); //gọi
+        this.weight += 1; //tăng cân lên 1 nếu còn táo ăn
+        document.write(`${this.name} ăn một miếng táo. Cân nặng bây giờ là ${this.weight} <br>`);
+      } else {
+        document.write(`${this.name} muốn ăn nhưng táo hết rồi. <br>`);
+      }
+    }
+
+    checkApple(apple) {
+      document.write(`Táo còn lại: ${apple.getWeight()} đơn vị <br>`);
+    }
+
+    info() { //method
+      document.write(` ${this.name} (${this.gender}) – Cân nặng: ${this.weight} <br>`);
+    }
+  }
+
+  // Chạy mô phỏng
+  const apple = new Apple();
+  const adam = new Human('Adam', 'Nam', 60);
+  const eva = new Human('Eva', 'Nữ', 50);
+
+  adam.say("Chào Eva! Cùng ăn táo nhé." );
+  eva.say("Vâng, Adam. Chúng ta cùng ăn!");
+
+  let turn = 0;
+  while (!apple.isEmpty()) {
+    if (turn % 2 === 0) {
+      adam.eat(apple);
+      adam.checkApple(apple);
+    } else {
+      eva.eat(apple);
+      eva.checkApple(apple);
+    }
+    turn++;
+  }
+
+  document.write('Táo đã ăn hết. <br>');
+  adam.info();
+  eva.info();
+</script>
+</body>
+</html>

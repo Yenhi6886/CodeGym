@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Temperature {
+    constructor(celcius) {
+        if (celcius < -273 ) {
+            throw Error("Nhiệt độ không thể thấp hơn -273°C.")
+        }
+            this.Celcius = celcius;
+        //Lưu giá trị celsius vào thuộc tính của object,'this' ám chỉ object hiện tại.
+    }
+    getFahrenheit() {
+      return (this.Celcius * 9/5) + 32;
+    }
+    getKelvin() {
+      return this.Celcius + 273.15;
+    }
+  };
+  let temp = new Temperature(25);
+  alert("Fahrenheit: "+temp.getFahrenheit());
+  alert("Kelvin: "+temp.getKelvin());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Male</td>
+        <td>
+            <input type="date" id="dateMale" >
+        </td>
+        <td>Female</td>
+        <td>
+            <input type="date" id="dateFemale" >
+
+        </td>
+        <td>
+            <button type="button" onclick="checkCanChiMale()">Check Can Chi Va Do Hop Nhau</button>
+        </td>
+    </tr>
+</table>
+<p id="resultMale"></p>
+<p id="resultFemale"></p> <br>
+<p id="result"></p>
+<p id="tuHanhXung"></p>
+<p id="doTuongHop"></p> <br>
+
+<script>
+
+    function checkCanChiMale() {
+        let birthdayMale = new Date(document.getElementById("dateMale").value);
+        let birthdayFemale = new Date(document.getElementById("dateFemale").value);
+        let yearMale = birthdayMale.getFullYear();
+        let yearFemale = birthdayFemale.getFullYear();
+
+        let canMale = yearMale % 10 ;
+        let chiMale = yearMale % 12 ;
+        let canFemale = yearFemale % 10 ;
+        let chiFemale = yearFemale % 12 ;
+
+        let canchinu;
+        let canchinam;
+
+
+        let tamHop = false;
+        let tuHanhXung = false;
+
+        let can ;
+        let chi;
+
+        switch (canMale) {
+            case 0:
+                can = "Canh";
+                break;
+            case 1:
+                can = "Tân";
+                break;
+            case 2:
+                can = "Nhân";
+                break;
+            case 3:
+                can = "Quý";
+                break;
+            case 4:
+                can = "Giáp";
+                break;
+            case 5:
+                can = "Ất";
+                break;
+            case 6:
+                can = "Bính";
+                break;
+            case 7:
+                can = "Đinh";
+                break;
+            case 8:
+                can = "Mậu";
+                break;
+            case 9:
+                can = "Kỷ";
+                break;
+        }
+
+        switch (chiMale) {
+            case 0:
+                chi = "Thân";
+                break;
+            case 1:
+                chi = "Dậu";
+                break;
+            case 2:
+                chi = "Tuất";
+                break;
+            case 3:
+                chi = "Hợi";
+                break;
+            case 4:
+                chi = "Tý";
+                break;
+            case 5:
+                chi = "Sửu";
+                break;
+            case 6:
+                chi = "Dần";
+                break;
+            case 7:
+                chi = "Mão";
+                break;
+            case 8:
+                chi = "Thìn";
+                break;
+            case 9:
+                chi = "Tỵ";
+                break;
+            case 10:
+                chi = "Ngọ";
+                break;
+            case 11:
+                chi = "Mùi";
+                break;
+        }
+        canchinam = can+" " + chi;
+        document.getElementById("resultMale").innerHTML ="Bạn nam là Can Chi " + canchinam;
+
+        switch (canFemale) {
+            case 0:
+                can = "Canh";
+                break;
+            case 1:
+                can = "Tân";
+                break;
+            case 2:
+                can = "Nhân";
+                break;
+            case 3:
+                can = "Quý";
+                break;
+            case 4:
+                can = "Giáp";
+                break;
+            case 5:
+                can = "Ất";
+                break;
+            case 6:
+                can = "Bính";
+                break;
+            case 7:
+                can = "Đinh";
+                break;
+            case 8:
+                can = "Mậu";
+                break;
+            case 9:
+                can = "Kỷ";
+                break;
+        }
+
+        switch (chiFemale) {
+            case 0:
+                chi = "Thân";
+                break;
+            case 1:
+                chi = "Dậu";
+                break;
+            case 2:
+                chi = "Tuất";
+                break;
+            case 3:
+                chi = "Hợi";
+                break;
+            case 4:
+                chi = "Tý";
+                break;
+            case 5:
+                chi = "Sửu";
+                break;
+            case 6:
+                chi = "Dần";
+                break;
+            case 7:
+                chi = "Mão";
+                break;
+            case 8:
+                chi = "Thìn";
+                break;
+            case 9:
+                chi = "Tỵ";
+                break;
+            case 10:
+                chi = "Ngọ";
+                break;
+            case 11:
+                chi = "Mùi";
+                break;
+        }
+        canchinu = can+" " + chi;
+        document.getElementById("resultFemale").innerHTML ="Bạn nữ là Can Chi " + canchinu;
+
+
+
+        switch (chiMale) {
+            case 0:
+            case 4:
+            case 7:
+                switch (chiFemale) {
+                    case 0:
+                    case 4:
+                    case 7:
+                        tamHop = true;
+                        document.getElementById("result").innerHTML = "2 bạn thuộc bộ tam hợp";
+                        break;
+                    default:
+                        document.getElementById("result").innerHTML = "2 bạn không thuộc bộ tam hợp";
+                        break;
+                }
+                break;
+            case 1:
+            case 5:
+            case 8:
+                switch (chiFemale) {
+                    case 1:
+                    case 5:
+                    case 8:
+                        tamHop = true;
+                        document.getElementById("result").innerHTML = "2 bạn thuộc bộ tam hợp";
+                        break;
+                    default:
+                        document.getElementById("result").innerHTML = "2 bạn không thuộc bộ tam hợp";
+                        break;
+                }
+                break;
+            case 2:
+            case 6:
+            case 9:
+                switch (chiFemale) {
+                    case 2:
+                    case 6:
+                    case 9:
+                        tamHop = true;
+                        document.getElementById("result").innerHTML = "2 bạn thuộc bộ tam hợp";
+                        break;
+                    default:
+                        document.getElementById("result").innerHTML = "2 bạn không thuộc bộ tam hợp";
+                        break;
+                }
+                break;
+            case 3:
+            case 10:
+            case 11:
+                switch (chiFemale) {
+                    case 3:
+                    case 10:
+                    case 11:
+                        tamHop = true;
+                        document.getElementById("result").innerHTML = "2 bạn thuộc bộ tam hợp";
+                        break;
+                    default:
+                        document.getElementById("result").innerHTML = "2 bạn không thuộc bộ tam hợp";
+                        break;
+                }
+                break;
+            default:
+                document.getElementById("result").innerHTML = "2 bạn không thuộc bộ tam hợp";
+                break;
+        }
+
+
+
+
+        switch (chiMale) {
+            case 0:
+            case 3:
+            case 6:
+            case 9:
+                switch (chiFemale) {
+                    case 0:
+                    case 3:
+                    case 6:
+                    case 9:
+                        tuHanhXung= true;
+                        document.getElementById("tuHanhXung").innerHTML = "2 bạn tứ hành xung";
+                        break;
+                    default:
+                        document.getElementById("tuHanhXung").innerHTML = "2 bạn không bị tứ hành xung";
+                        break;
+                }
+                break;
+            case 2:
+            case 5:
+            case 8:
+            case 11:
+                switch (chiFemale) {
+                    case 2:
+                    case 5:
+                    case 8:
+                    case 11:
+                        tuHanhXung= true;
+                        document.getElementById("tuHanhXung").innerHTML = "2 bạn tứ hành xung";
+                        break;
+                    default:
+                        document.getElementById("tuHanhXung").innerHTML = "2 bạn không bị tứ hành xung";
+                        break;
+                }
+                break;
+            case 1:
+            case 4:
+            case 7:
+            case 10:
+                switch (chiFemale) {
+                    case 1:
+                    case 4:
+                    case 7:
+                    case 10:
+                        tuHanhXung= true;
+                        document.getElementById("tuHanhXung").innerHTML = "2 bạn tứ hành xung";
+                        break;
+                    default:
+                        document.getElementById("tuHanhXung").innerHTML = "2 bạn không bị tứ hành xung";
+                        break;
+                }
+                break;
+        }
+        if (tamHop && !tuHanhXung) {
+            document.getElementById("doTuongHop").innerHTML = "=> 2 bạn rất hợp";
+        } else if (!tamHop && !tuHanhXung) {
+            document.getElementById("doTuongHop").innerHTML = "=> 2 bạn hợp";
+        } else if (tamHop && tuHanhXung) {
+            document.getElementById("doTuongHop").innerHTML = "=> 2 bạn bình thường";
+        } else {
+            document.getElementById("doTuongHop").innerHTML = "=> 2 bạn khắc nhau";
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let thoiGian = +prompt("Nhap so phut ma ho gia dinh ban da su dung");
+    let giaCuoc = 0  ;
+    if (thoiGian <= 30 && thoiGian > 0) {
+        giaCuoc = 100;
+    } else if (thoiGian > 30 && thoiGian <= 60) {
+        giaCuoc = 200;
+    } else if (thoiGian > 60 && thoiGian <= 120) {
+        giaCuoc = 300;
+    } else if (thoiGian > 120) {
+        giaCuoc = 500;
+    } else {
+        alert("Thoi gian khong hop le");
+    }
+
+    if (giaCuoc >= 100 ) {
+        let money = giaCuoc * thoiGian;
+        alert("Gia cuoc la: " + money + " VND");
+    }
+
+
+</script>
+
+</body>
+</html>

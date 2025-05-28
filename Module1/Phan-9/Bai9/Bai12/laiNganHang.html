@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let tienGoc = +prompt("Nhap so tien goc");
+  let laiSuat = +prompt("Nhap lai suat");
+  let thang = +prompt("Nhap so thang");
+  let tienLai = tienGoc * Math.pow(1 + laiSuat, thang) ;
+  let lai = tienLai - tienGoc;
+    alert("So tien lai la: " + lai);
+
+</script>
+</body>
+</html>

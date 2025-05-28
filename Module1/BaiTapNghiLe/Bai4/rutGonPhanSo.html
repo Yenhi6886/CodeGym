@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập giá trị vào đây");
+
+    function find(x) {
+        let arr = number.split("/");
+
+        if (arr.length !== 2) {
+            alert("Khong phai la phan so");
+            return;
+        }
+
+        let tuSo = Number(arr[0].trim());
+        let mauSo = Number(arr[1].trim());
+
+        if (isNaN(tuSo) || isNaN(mauSo) || mauSo === 0) {
+            alert("Khong phai la phan so");
+            return;
+        }
+        if (tuSo === 0) {
+            alert("0");
+            return;
+        }
+
+        function uocChungMax(a, b) {
+            if (b === 0) return Math.abs(a);
+            return uocChungMax(b, a % b);
+        }
+
+        let ucln = uocChungMax(tuSo, mauSo);
+        tuSo = tuSo / ucln;
+        mauSo = mauSo / ucln;
+        if (mauSo === 1) {
+            alert(tuSo);
+            return;
+        } else {
+            alert(`${tuSo}/${mauSo}`);
+        }
+    }
+
+    find(number);
+
+</script>
+
+</body>
+</html>

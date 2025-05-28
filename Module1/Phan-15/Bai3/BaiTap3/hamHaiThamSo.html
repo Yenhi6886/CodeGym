@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function giaTri(soThuNhat, soThuHai) {
+        let total = 0;
+        if (soThuNhat > soThuHai) {
+            alert("So thu nhat lớn hơn số thứ hai");
+        } else {
+            total = soThuNhat + soThuHai
+        }
+        return total;
+    }
+
+    let soThuNhat = +prompt("Nhập vào số thứ nhất");
+    let soThuHai = +prompt("Nhập vào số thứ hai");
+    document.write(giaTri(soThuNhat, soThuHai));
+</script>
+</body>
+</html>

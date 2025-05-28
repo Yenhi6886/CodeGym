@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let number = +prompt("Nhap kich thuoc mang");
+    let arr = [];
+    let count = 0;
+    for (i = 0; i < number; i++) {
+        let phanTu = prompt(`Nhap phan tu thu ${i}`);
+        arr.push(phanTu);
+
+        if (phanTu >= '0' && phanTu <= '9') {
+            count++;
+        }
+    }
+
+    alert(`Mang vua nhap: ${arr.join("")}`);
+    alert(`So ky tu so (0-9): ${count}`);
+
+
+</script>
+</body>
+</html>

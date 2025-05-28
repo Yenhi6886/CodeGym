@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numberOne = +prompt("Nhập tham số thứ nhất");
+    let numberTwo = +prompt("Nhập tham số thứ hai");
+
+    function isAmicable(a, b) {
+        function sumDivisors(n) {
+            let sum = 0;
+            for (let i = 1; i < n; i++) {
+                if (n % i === 0) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+
+        return sumDivisors(a) === b && sumDivisors(b) === a;
+    }
+
+    alert(isAmicable(numberOne, numberTwo));
+</script>
+</body>
+</html>

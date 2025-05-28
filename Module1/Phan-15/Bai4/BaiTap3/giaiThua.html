@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Nhap so muon tinh giai thua");
+    let result = 1;
+
+    function tinhGiaiThua(n) {
+        for (i = 2; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    let ketQua = tinhGiaiThua(number);
+    alert(ketQua);
+
+</script>
+</body>
+</html>

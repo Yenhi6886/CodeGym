@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<style>
+    #btn_no {
+        position: absolute;
+    }
+</style>
+</head>
+<body>
+
+<h2>Do you love me</h2>
+<!--<button type="button" onclick="dongy()" id="yes">Yes</button>-->
+<!--<button type="button" onclick="phaiDongY()" id="no">No</button>-->
+<button onclick="yes()" id="btn_yes">Yes</button>
+<button onmouseover="changePositionBtnNo()" id="btn_no">No</button>
+
+
+<script>
+ /*   function dongy() {
+      alert("<3");
+    }
+
+    function phaiDongY() {
+        const btn = document.getElementById("no");
+
+        const maxX = window.innerWidth - btn.offsetWidth;
+        const maxY = window.innerHeight - btn.offsetHeight;
+
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        btn.style.left = randomX + "px";
+        btn.style.top = randomY + "px";
+        btn.style.position = "absolute";
+    }
+*/
+  function changePositionBtnNo() {
+      let btnNo = document.getElementById("btn_no");
+      let numberLeftRandom = Math.random() * (1000 - 100 ) + 100 ;
+      btnNo.style.left = numberLeftRandom + "px";
+
+      let numberTopRandom = Math.random() * (500 - 100 ) + 100 ;
+      btnNo.style.top = numberTopRandom + "px";
+  }
+  function yes() {
+      alert("I love you too");
+  }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+rootProject.name = 'NgoaiLeVaDebug'
+include 'ThucHanh2'
+include 'Test'
+include 'ThucHanh3'
+include 'ThucHanh1'
+include 'bAItAP1'
+include 'Bai1'
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp Date</title>
+</head>
+<body>
+<script>
+    let MyDate = function (day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        //Cài thêm setDate() để thiết lập ngày tháng năm cho MyDate
+        this.setDate =function (day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        //toString để trả về chuỗi ngày thnag năm
+        this.toString = function () {
+            return this.day + "/" + this.month + "/" + this.year;
+        }
+        this.getDay = function () {
+            return this.day;
+        }
+        this.getMonth = function () {
+            return this.month;
+        }
+        this.getFullYear = function () {
+            return this.year;
+        }
+        this.setDay = function (day) {
+            this.day = day;
+        }
+        this.setMonth = function (month) {
+            this.month = month;
+        }
+        this.setFullYear = function (year) {
+            this.year = year;
+        }
+    };
+    let date = new MyDate(22, 10, 2004);
+
+    date.setDay(6);
+    date.setMonth(10);
+    date.setFullYear(2006);
+
+    let day = date.getDay();
+    let month = date.getMonth();
+    let year = date.getFullYear();
+    // alert(day + "/" + month + "/" + year);
+    date.setDate(22,4,2003); //
+    document.write(date.toString());
+
+</script>
+</body>
+</html>

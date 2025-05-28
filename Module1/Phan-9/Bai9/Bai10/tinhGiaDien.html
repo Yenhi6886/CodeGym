@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let soDien = +prompt("Nhap so dien tieu thu");
+  let money = 0;
+    if (soDien > 0) {
+        if (soDien <= 50) {
+        money = soDien * 1728;
+        } else if (soDien <= 200) {
+        money = 50 * 1728 + (soDien - 50) * 1786
+        } else if (soDien <= 150) {
+        money = 50 * 1728 + 50 * 1786 + (soDien - 100) * 2074
+        } else if (soDien <= 300) {
+        money = 50 * 1728 + 50 * 1786 + 50 * 2074 + (soDien - 150) * 2612
+        } else {
+        money = 50 * 1728 + 50 * 1786 + 50 * 2074 + 50 * 2612 + (soDien - 300) * 2919
+        }
+    }else {
+        alert("So dien khong hop le");
+    }
+    alert("So tien phai tra la: " + money + " VND");
+
+</script>
+</body>
+</html>

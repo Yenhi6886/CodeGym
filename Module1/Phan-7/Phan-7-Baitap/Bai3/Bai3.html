@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="number" id="circle">
+<button onclick="getTinh()">Tinh</button>
+<p id="area"></p>
+<p id="perimeter"></p>
+
+<script>
+  function getTinh() {
+    let r = +document.getElementById("circle").value;
+    let area = r * r * Math.PI;
+    let perimeter = r * 2 * Math.PI;
+
+    area = area.toFixed(2);
+    perimeter = perimeter.toFixed(2);
+    document.getElementById("area").innerHTML = "Dien tich hinh tron: "+ area;
+    document.getElementById("perimeter").innerHTML = "Chu vi hinh tron: "+ perimeter;
+  }
+</script>
+</body>
+</html>

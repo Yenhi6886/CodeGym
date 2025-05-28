@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [3, 77, 65, 4, 35, 2, 1, 6, 4, 5];
+    let value = +prompt("Nhap vao so bat ki");
+    let xet = false;
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] === value) {
+            xet = true;
+            break;
+        }
+    }
+    if (xet === true) {
+        alert("V is in the array");
+    } else {
+        alert("V is not in the array");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let s = "AABAABAB";
+
+    function alternatingCharacters(s) {
+        debugger
+        let count = 0;
+        for (let i = 0; i < s.length; i++) {
+            if (s[i] === s[i - 1]) {
+                count++;
+            }
+        }
+        console.log(count);
+    }
+
+    alternatingCharacters(s);
+  /*  a.sort((x, y) => x - y);
+    for (let i = 0; i < a.length; i += 2) {
+        if (a[i] !== a[i + 1]) {
+            return a[i];
+        }
+    }*/
+
+</script>
+</body>
+</html>

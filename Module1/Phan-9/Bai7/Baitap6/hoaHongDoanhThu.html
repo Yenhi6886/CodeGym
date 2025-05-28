@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let money = +prompt("Nhập doanh số bạn bán được vào đây");
+  let revenueCommission = null;
+  if (money < 20000000){
+    revenueCommission = money * 1 / 100;
+    alert("Hoa hong cua bạn la: " + revenueCommission + " VND");
+  }else if (money >= 20000000 && money < 100000000) {
+    revenueCommission = money * 2 / 100;
+    alert("Hoa hong cua bạn la: " + revenueCommission + " VND");
+  } else if (money >= 100000000 && money < 500000000) {
+    revenueCommission = money * 5 / 100;
+    alert("Hoa hong cua bạn la: " + revenueCommission + " VND");
+  } else if(money >= 500000000)  {
+    revenueCommission = money * 10 / 100;
+    alert("Hoa hong cua bạn la: " + revenueCommission + " VND");
+  } else {
+    alert("Doanh số không hợp lệ");
+  }
+</script>
+</body>
+</html>

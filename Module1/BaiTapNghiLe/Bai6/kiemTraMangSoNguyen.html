@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = prompt("Nhap mang so nguyen").split(",").map(Number);
+
+    function kiemTraChanLe(n) {
+        let soLe = true;
+        for (let i = 0; i < n.length - 1; i++) {
+            if (n[i] % 2 === 0 && n[i + 1] % 2 !== 0) {
+                return -1;
+            }
+            if (n[i] % 2 === 0) {
+                soLe = false;
+            }
+        }
+        return soLe ? 0 : 1;
+    }
+
+    alert(kiemTraChanLe(arr));
+</script>
+</body>
+</html>

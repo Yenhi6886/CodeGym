@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="800" height="700"></canvas>
+;
+
+<script>
+    let chieuRong = +prompt('Nhap chieu rong hinh chu nhat');
+    let chieuDai = +prompt('Nhap chieu dai hinh chu nhat');
+
+    class Rectangle {
+        constructor(length, width) {
+            this.length = length;
+            this.width = width;
+        }
+
+        getArea() {
+            return this.length * this.width;
+        }
+
+        getPerimeter() {
+            return (this.length + this.width) * 2;
+        }
+
+        draw(ctx,x,y, color='black') {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, this.length, this.width);
+        }
+
+    }
+
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    let rect = new Rectangle(chieuDai, chieuRong);
+    rect.draw(ctx,0,0);
+    showInfo(rect);
+
+
+    function showInfo(rect) {
+        let info = `Diện tích: ${rect.getArea()}, Chu vi: ${rect.getPerimeter()}`;
+        alert(info);
+        return info;
+    }
+
+</script>
+
+</body>
+</html>

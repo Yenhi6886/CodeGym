@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Caro Game</title>
+</head>
+<body>
+<h3>Caro Game 5x5</h3>
+<p id="carogame"></p>
+<button onclick="changeValue()">Đánh cờ</button>
+
+<script>
+    let b = document.getElementById('carogame');
+    let board = Array.from({ length: 5 }, () => Array(5).fill('(.)'));
+    let turn = 0;
+
+    function renderBoard() {
+        let output = '';
+        for (let i = 0; i < 5; i++) {
+            output += '<br>';
+            for (let j = 0; j < 5; j++) {
+                output += board[i][j] + '&ensp;&ensp;';
+            }
+        }
+        b.innerHTML = output;
+    }
+
+    function changeValue() {
+        let x = +prompt("Nhập dòng (0-4):");
+        let y = +prompt("Nhập cột (0-4):");
+        if (board[x][y] !== '(.)') {
+            alert("Ô đã đánh! Chọn ô khác.");
+            return;
+        }
+        board[x][y] = turn % 2 === 0 ? 'X' : 'O';
+        turn++;
+        renderBoard();
+        checkWinner();
+    }
+
+    function checkWinner() {
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 3; j++) {
+                if (board[i][j] !== '(.)' &&
+                    board[i][j] === board[i][j + 1] &&
+                    board[i][j] === board[i][j + 2]) {
+                    alert(board[i][j] + " thắng (ngang)");
+                    return;
+                }
+            }
+        }
+
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 5; j++) {
+                if (board[i][j] !== '(.)' &&
+                    board[i][j] === board[i + 1][j] &&
+                    board[i][j] === board[i + 2][j]) {
+                    alert(board[i][j] + " thắng (dọc)");
+                    return;
+                }
+            }
+        }
+    }
+
+    renderBoard();
+</script>
+</body>
+</html>

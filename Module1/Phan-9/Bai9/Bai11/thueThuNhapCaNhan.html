@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let thuNhap = +prompt("Nhap thu nhap");
+    let soNguoiPhuThuoc = +prompt("Nhap so nguoi phu thuoc");
+    let giamTruBanThan = 11000000;
+    let giamTruNguoiPhuThuoc = 4400000;
+    let thuNhapChiuThue = thuNhap - giamTruBanThan - (soNguoiPhuThuoc * giamTruNguoiPhuThuoc);
+    let thue = 0;
+    if (thuNhapChiuThue > 0 && thuNhapChiuThue <= 5000000) {
+        thue = thuNhapChiuThue * 5 / 100;
+    } else if (thuNhapChiuThue > 5000000 && thuNhapChiuThue <= 10000000) {
+        thue = thuNhapChiuThue * 10 / 100;
+    } else if (thuNhapChiuThue > 10000000 && thuNhapChiuThue <= 18000000) {
+        thue = thuNhapChiuThue * 15 / 100;
+    } else if (thuNhapChiuThue > 18000000 && thuNhapChiuThue <= 32000000) {
+        thue = thuNhapChiuThue * 20 / 100;
+    } else if (thuNhapChiuThue > 32000000 && thuNhapChiuThue <= 52000000) {
+        thue = thuNhapChiuThue * 25 / 100;
+    } else if (thuNhapChiuThue > 52000000 && thuNhapChiuThue <= 80000000) {
+        thue = thuNhapChiuThue * 30 / 100;
+    } else if (thuNhapChiuThue > 80000000) {
+        thue = thuNhapChiuThue * 35 / 100;
+    } else {
+        alert("Khong phai dong thue thu nhap ca nhan");
+    }
+    alert("So thue thu nhap ca nhan phai nop la: " + thue + " VND");
+
+</script>
+
+</body>
+</html>

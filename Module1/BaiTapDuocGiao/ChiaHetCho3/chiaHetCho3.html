@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="divisibleBy3"></p>
+<script>
+    let number = +prompt("Nhập số lượng bạn muốn in ra");
+    let total = 0;
+    let chiaHetCho3 = "";
+
+    for (let i = 1; i <= number; i++) {
+        total += i;
+
+        if (i % 3 === 0) {
+            chiaHetCho3 += i + " ";
+        }
+    }
+
+    document.getElementById("divisibleBy3").innerHTML = "Các số chia hết cho 3 là: " + chiaHetCho3;
+
+    document.write("<br>Tổng các số từ 1 đến " + number + " là: " + total);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sử dụng sản phẩm</title>
+    <script src="quanLySanPham.js" defer></script>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+<h2>Add New Product</h2>
+<input type="text" id="inputAdd" name="productName" placeholder="Product Name">
+<button id="buttonAdd" onclick="addProduct()">Add</button> <br> <br>
+
+<table>
+    <caption>Quản lý sản phẩm</caption>
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá sản phẩm</th>
+        <th>Số lượng sản phẩm</th>
+        <th>Hành động</th>
+    </tr>
+    </thead>
+
+    <tbody id="productBody"></tbody>
+</table>
+
+</body>
+</html>

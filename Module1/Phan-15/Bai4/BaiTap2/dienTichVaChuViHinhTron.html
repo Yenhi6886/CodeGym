@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let radius = +prompt("Nhap ban kinh");
+
+    function chuVi(radius) {
+        return Math.PI * 2 * radius;
+    }
+
+    function dienTich(radius) {
+        return Math.PI * radius * radius;
+    }
+
+    let resultChuvi = chuVi(radius);
+    alert("Chu vi hinh tron: " +(resultChuvi.toFixed(2)));
+    let resultDientich = dienTich(radius);
+    alert("Dien tich hinh tron: " +(resultDientich.toFixed(2)));
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = prompt("Nhap mang vao day").split(",").map(item => item.trim());
+
+    function kiemTraKyTu(n) {
+        let coSo = false;
+        let coChu = false;
+        let coKyTu = false;
+        for (let i = 0; i < n.length; i++) {
+            if (/^\d$/.test(n[i])) {
+                coSo = true;
+            } else if (/^[a-zA-Z]$/.test(n[i])) {
+                coChu = true;
+            } else {
+                coKyTu = true;
+            }
+        }
+        if (coSo && !coChu && !coKyTu) {
+            return 1;
+        }
+        if (coChu && !coKyTu && !coSo) {
+            return 0;
+        }
+        return -1
+    }
+
+    alert(kiemTraKyTu(arr));
+</script>
+</body>
+</html>

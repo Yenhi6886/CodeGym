@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let year = parseInt(prompt("Nhap nam vao day"));
+    let leapYear = false;
+
+    let chiaHetCho4 = year % 4 == 0;
+    if (chiaHetCho4 ) {
+        let chiaHetCho100 = year % 100 == 0;
+        if (chiaHetCho100) {
+            let chiaHetCho400 = year % 400 == 0;
+            if (chiaHetCho400) {
+                leapYear = true;
+            }
+        } else {
+            leapYear = true;
+        }
+    }
+
+    if (leapYear) {
+        alert(year + " la nam nhuan");
+    } else {
+        alert(year + " la nam khong nhuan");
+    }
+
+</script>
+</body>
+</html>

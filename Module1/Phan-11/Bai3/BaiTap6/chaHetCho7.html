@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = 0;b=1;total = 0;
+  for (i = 0; i < 30 ; i++) {
+      total = a +b;
+      if ( total % 7 == 0) {
+          alert(a + "+ " + b + " chia het cho 7");
+          break;
+      } else {
+            alert( a + " + " +b+ " khong chia het cho 7");
+      }
+      a = b;
+      b = total;
+  }
+</script>
+</body>
+</html>

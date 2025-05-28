@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Vong lap</h2>
+<p id="demo"></p>
+<script>
+    vonglap1();
+    function vonglap1() {
+        let text = "";
+        let i = 0;
+        for (let i = 0; i < 5; i++) {
+            text += "The number is " + i + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+    }
+
+    vonglap2();
+    function vonglap2() {
+        let number = +prompt("Nhap gia tri vao");
+        let result = 0;
+        for (let i = 1; i <= number; i++) {
+            result += i;
+        }
+        alert("Tong tu 1 den " + number + " la: " + result);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="padding: 50px;">
+    Sample Screen: <br>
+    <input type="text" id="textValue">
+    <button type="button" onclick="addArr()" id="btnAdd" value="Add">Add</button>
+    <button type="button" onclick="displayArr()" id="btnDisplay" value="Display">Display</button>
+    <div id="result"></div>
+
+    <script>
+        let x = 0;
+        let arr= Array();
+        function addArr() {
+            arr[x] = document.getElementById("textValue").value;
+            alert("So: "+arr[x] + ' add index ' +x);
+            x++;
+            document.getElementById("textValue").value = "";
+        }
+        function displayArr() {
+            let e = "<hr>";
+            for (let i = 0; i < arr.length; i++) {
+                e += "So " + i + " = " + arr[i] + "<br>";
+            }
+            document.getElementById("result").innerHTML = e;
+        }
+    </script>
+</body>
+</html>

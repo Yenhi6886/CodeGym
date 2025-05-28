@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soThuNhat = +prompt("Nhap so thu nhat")
+    let soThuHai = +prompt("Nhap so thu hai")
+
+    function doiCho(s1, s2) {
+        [s1, s2] = [s2, s1];
+        return [s1, s2];
+    }
+    document.write("Sau khi doi cho " + doiCho(soThuNhat,soThuHai));
+
+</script>
+</body>
+</html>
