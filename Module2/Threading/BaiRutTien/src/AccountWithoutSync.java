@@ -18,7 +18,7 @@ public class AccountWithoutSync {
             System.out.println("Bi ngat khi cho join()");
         }
 
-        System.out.println("So du cuoi cung "+account.getBalance());
+        System.out.println("So du cuoi cung " + account.getBalance());
 
     }
 }
