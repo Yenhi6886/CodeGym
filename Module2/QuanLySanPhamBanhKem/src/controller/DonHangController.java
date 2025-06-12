@@ -4,6 +4,11 @@ import model.*;
 import java.io.*;
 import java.util.*;
 
+/**
+ * Lớp DonHangController quản lý danh sách các đơn hàng.
+ * Đảm nhiệm các chức năng thêm đơn hàng, đọc/ghi file cho đơn hàng.
+ * Được sử dụng bởi lớp MainView để thao tác dữ liệu đơn hàng.
+ */
 public class DonHangController {
     private List<DonHang> danhSachDon = new ArrayList<>();
 
@@ -41,7 +46,6 @@ public class DonHangController {
     }
 
     public void ghiFileText(String path) {
-        // Giữ lại để tương thích, gọi lại ghiFile
         ghiFile(path);
     }
 }

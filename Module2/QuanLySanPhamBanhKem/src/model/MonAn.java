@@ -2,8 +2,14 @@ package model;
 
 import java.io.Serializable;
 
+/**
+ * Lớp MonAn đại diện cho một món ăn trong hệ thống.
+ * Chứa các thuộc tính cơ bản như id, mã, tên, loại, giá, số lượng, mô tả, trạng thái xoá.
+ * Được sử dụng trong quản lý sản phẩm và đơn hàng.
+ */
 public class MonAn implements Serializable {
     private String id;
+    private String ma;
     private String ten;
     private String loai;
     private double gia;
@@ -11,8 +17,9 @@ public class MonAn implements Serializable {
     private String moTa;
     private boolean daXoa;
 
-    public MonAn(String id, String ten, String loai, double gia, int soLuong, String moTa) {
+    public MonAn(String id, String ma, String ten, String loai, double gia, int soLuong, String moTa) {
         this.id = id;
+        this.ma = ma;
         this.ten = ten;
         this.loai = loai;
         this.gia = gia;
@@ -20,20 +27,73 @@ public class MonAn implements Serializable {
         this.moTa = moTa;
     }
 
-    public String getId() { return id; }
-    public String getTen() { return ten; }
-    public String getLoai() { return loai; }
-    public double getGia() { return gia; }
-    public int getSoLuong() { return soLuong; }
-    public String getMoTa() { return moTa; }
-    public boolean isDaXoa() { return daXoa; }
-    public void setDaXoa(boolean daXoa) { this.daXoa = daXoa; }
+    public String getId() {
+        return id;
+    }
 
-    public void setSoLuong(int soLuong) { this.soLuong = soLuong; }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMa() {
+        return ma;
+    }
+
+    public void setMa(String ma) {
+        this.ma = ma;
+    }
+
+    public String getTen() {
+        return ten;
+    }
+
+    public void setTen(String ten) {
+        this.ten = ten;
+    }
+
+    public String getLoai() {
+        return loai;
+    }
+
+    public void setLoai(String loai) {
+        this.loai = loai;
+    }
+
+    public double getGia() {
+        return gia;
+    }
+
+    public void setGia(double gia) {
+        this.gia = gia;
+    }
+
+    public int getSoLuong() {
+        return soLuong;
+    }
+
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
+    }
+
+    public String getMoTa() {
+        return moTa;
+    }
+
+    public void setMoTa(String moTa) {
+        this.moTa = moTa;
+    }
+
+    public boolean isDaXoa() {
+        return daXoa;
+    }
+
+    public void setDaXoa(boolean daXoa) {
+        this.daXoa = daXoa;
+    }
 
     @Override
     public String toString() {
-        return String.format("ID: %s | Tên: %s | Loại: %s | Giá: %.2f | SL: %d | Mô tả: %s",
-                id, ten, loai, gia, soLuong, moTa);
+        return String.format("ID: %s | Mã: %s | Tên: %s | Loại: %s | Giá: %.2f | SL: %d | Mô tả: %s",
+                id, ma, ten, loai, gia, soLuong, moTa);
     }
 }

@@ -3,6 +3,11 @@ package model;
 import java.io.Serializable;
 import java.util.*;
 
+/**
+ * Lớp DonHang đại diện cho một đơn hàng của khách.
+ * Chứa thông tin người mua, danh sách món, tổng tiền, ngày đặt, trạng thái.
+ * Được sử dụng để lưu trữ và xử lý các đơn hàng trong hệ thống.
+ */
 public class DonHang implements Serializable {
     public String ma;
     public String tenNguoiMua;

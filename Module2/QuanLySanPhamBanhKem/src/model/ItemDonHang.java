@@ -2,6 +2,11 @@ package model;
 
 import java.io.Serializable;
 
+/**
+ * Lớp ItemDonHang đại diện cho một món ăn cụ thể trong đơn hàng.
+ * Lưu thông tin món ăn và số lượng đặt mua.
+ * Được sử dụng trong lớp DonHang để quản lý chi tiết từng món trong đơn.
+ */
 public class ItemDonHang implements Serializable {
     private MonAn monAn;
     private int soLuong;

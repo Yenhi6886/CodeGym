@@ -1,0 +1,2 @@
+1.Tách riêng việc validate dữ liệu và tìm kiếm khỏi MainController.
+2.vi phạm nguyên tắc S-vừa xử lý nhập liệu, vừa lưu file, vừa điều phối logic nghiệp vụ
