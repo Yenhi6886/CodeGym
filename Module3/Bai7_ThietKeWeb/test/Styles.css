@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: "Dancing Script", Arial;
+    text-decoration: underline;
+}
+
+ul li a {
+    text-transform: capitalize;
+}
+
+a {
+    color: black;
+    text-decoration: line-through;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover {
+    color: orange;
+}
+
+/* . (dot): class selector */
+.box {
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+
+#second {
+    background-color: red;
+}
+
+#third {
+    background-color: green;
+}
+
+h1, ul, .box {
+    text-align: center;
+}
+
+.bg {
+    background-image: url("../img/i-like-food.svg");
+    background-size: cover;
+}
+
+
+
+
+

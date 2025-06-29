@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.nav a:hover,
+.nav a.active {
+    background-color: black;
+}
+
+.login {
+    font-size: 14px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.sidebar-left {
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.sidebar-left a {
+    display: block;
+    color: #007bff;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.sidebar-left a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.sidebar-right {
+    background-color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ad {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.footer {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}

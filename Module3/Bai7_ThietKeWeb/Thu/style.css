@@ -1,0 +1,19 @@
+/*
+body {
+    margin: 0;
+}
+#header {
+    background-color: rgb(27, 41, 78);
+    height: 100px;
+    width: 100%;
+}
+#main {
+    background-color: #956cbf;
+    height: 300px;
+    width: 70%;
+}
+.item {
+    padding: 20px;
+    background-color: lightblue;
+    text-align: center;
+}
