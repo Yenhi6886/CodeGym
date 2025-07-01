@@ -8,30 +8,19 @@ import java.util.regex.Pattern;
 
 //  Đây là giao diệchịu trách nhiệm giao tiếp với người dùng, gọi hàm xử lý nghiệp vụ ở controller.
 public class MainView {
-    private static Scanner sc = new Scanner(System.in);
-    private final String MONAN_FILE = "monan.txt";
-    private final String DONHANG_FILE = "donhang.txt";
+    private static final Scanner sc = new Scanner(System.in);
+    private final String MONAN_FILE = "monan.csv";
+    private final String DONHANG_FILE = "donhang.csv";
     private MonAnController monAnCtrl = new MonAnController();
     private DonHangController donHangCtrl = new DonHangController();
 
+
     public void start() {
         monAnCtrl.docFile(MONAN_FILE);
-        donHangCtrl.docFile(DONHANG_FILE);
-
+        donHangCtrl.docFile(DONHANG_FILE, monAnCtrl);
         int choice = 0;
         do {
-            System.out.println("\n===== Cake App Menu =====");
-            System.out.println("1. Thêm món ăn");
-            System.out.println("2. Sửa món ăn");
-            System.out.println("3. Xoá món ăn");
-            System.out.println("4. Khôi phục món ăn đã xoá");
-            System.out.println("5. Tìm món ăn");
-            System.out.println("6. Hiển thị tất cả món ăn");
-            System.out.println("7. Lên đơn hàng");
-            System.out.println("8. Ghi dữ liệu ra file text");
-            System.out.println("9. Thoát");
-            System.out.print("Chọn: ");
-
+            menu();
             String choiceStr = sc.nextLine();
             try {
                 choice = Integer.parseInt(choiceStr);
@@ -39,41 +28,28 @@ public class MainView {
                 System.out.println("Vui lòng nhập số!");
                 continue;
             }
-
             switch (choice) {
-                case 1:
-                    themMonAn();
-                    break;
-                case 2:
-                    suaMonAn();
-                    break;
-                case 3:
-                    xoaMonAn();
-                    break;
-                case 4:
-                    khoiPhucMonAn();
-                    break;
-                case 5:
-                    timMonAn();
-                    break;
-                case 6:
-                    hienThiTatCa();
-                    break;
-                case 7:
-                    taoDonHang();
-                    break;
-                case 8:
+                case 1 -> themMonAn();
+                case 2 -> suaMonAn();
+                case 3 -> xoaMonAn();
+                case 4 -> khoiPhucMonAn();
+                case 5 -> timMonAn();
+                case 6 -> hienThiTatCa();
+                case 7 -> taoDonHang();
+                case 8 -> {
                     monAnCtrl.ghiFileText(MONAN_FILE);
                     donHangCtrl.ghiFileText(DONHANG_FILE);
-                    System.out.println("Dữ liệu đã được ghi vào file text.");
-                    break;
-                case 9:
-                    System.out.println("Kết thúc chương trình. Cảm ơn bạn!");
-                    break;
-                default:
-                    System.out.println("Lựa chọn không hợp lệ, vui lòng thử lại.");
+                    System.out.println("Đã lưu CSV.");
+                }
+                case 9 -> System.out.println("Kết thúc.");
+                default -> System.out.println("Lựa chọn sai.");
             }
         } while (choice != 9);
+    }
+
+    private void menu() {
+        System.out.println("\n1.Thêm 2.Sửa 3.Xoá 4.Khôi phục 5.Tìm 6.Xem tất cả 7.Đặt hàng 8.Lưu 9.Thoát");
+        System.out.print("Chọn: ");
     }
 
     private void themMonAn() {
@@ -140,7 +116,7 @@ public class MainView {
         System.out.print("Mô tả: ");
         String moTa = sc.nextLine();
 
-        MonAn mon = new MonAn(id,ma, ten, loai, gia, sl, moTa);
+        MonAn mon = new MonAn(id, ma, ten, loai, gia, sl, moTa);
         monAnCtrl.themMonAn(mon);
         System.out.println("Đã thêm món ăn!");
     }
@@ -185,7 +161,7 @@ public class MainView {
             System.out.printf("Giá (%.2f): ", monCu.getGia());
             String giaStr = sc.nextLine();
             if (giaStr.trim().isEmpty()) {
-                gia = monCu.getGia();
+                gia = (double) monCu.getGia();
                 break;
             }
             try {
@@ -205,7 +181,7 @@ public class MainView {
             System.out.printf("Số lượng (%d): ", monCu.getSoLuong());
             String slStr = sc.nextLine();
             if (slStr.trim().isEmpty()) {
-                sl = monCu.getSoLuong();
+                sl = (int) monCu.getSoLuong();
                 break;
             }
             try {
@@ -238,7 +214,6 @@ public class MainView {
             System.out.println("Không tìm thấy món với ID trên");
         }
     }
-    // Thêm chức năng khôi phục món ăn đã xoá
 
     private void khoiPhucMonAn() {
         System.out.print("Nhập ID món cần khôi phục: ");
@@ -251,11 +226,15 @@ public class MainView {
     }
 
     private void timMonAn() {
-        System.out.print("Nhập ID món cần tìm: ");
-        String id = sc.nextLine();
-        MonAn mon = monAnCtrl.timTheoId(id);
-        if (mon != null) System.out.println(mon);
-        else System.out.println("Không tìm thấy món");
+        System.out.print("Nhập ID hoặc tên: ");
+        String key = sc.nextLine();
+        MonAn byId = monAnCtrl.timTheoId(key);
+        if (byId != null) System.out.println(byId);
+        else {
+            List<MonAn> list = monAnCtrl.timTheoTen(key);
+            if (list.isEmpty()) System.out.println("Không tìm thấy.");
+            else list.forEach(System.out::println);
+        }
     }
 
     private void hienThiTatCa() {
@@ -264,6 +243,7 @@ public class MainView {
             System.out.println(mon);
         }
     }
+
     private void taoDonHang() {
         List<ItemDonHang> items = new ArrayList<>();
         hienThiTatCa();
@@ -288,17 +268,22 @@ public class MainView {
                         System.out.println("Số lượng phải lớn hơn 0! Vui lòng nhập lại.");
                         continue;
                     }
+                    if (sl > ((Integer) mon.getSoLuong())) {
+                        System.out.println("Không đủ hàng. Số lượng còn lại: " + mon.getSoLuong());
+                        continue;
+                    }
                     break;
                 } catch (NumberFormatException e) {
                     System.out.println("Số lượng phải là số nguyên! Vui lòng nhập lại.");
                 }
             }
-            if (sl > mon.getSoLuong()) {
-                System.out.println("Không đủ hàng");
-                continue;
-            }
-            mon.setSoLuong(mon.getSoLuong() - sl);
+            mon.setSoLuong(((Integer) mon.getSoLuong()) - sl);
             items.add(new ItemDonHang(mon, sl));
+        }
+
+        if (items.isEmpty()) {
+            System.out.println("Không có món nào được chọn.");
+            return;
         }
 
         System.out.print("Tên người mua: ");

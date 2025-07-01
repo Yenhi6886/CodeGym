@@ -17,7 +17,7 @@ public class ItemDonHang implements Serializable {
     }
 
     public double tinhTien() {
-        return monAn.getGia() * soLuong;
+        return ((Number) monAn.getGia()).doubleValue() * soLuong;
     }
 
     public MonAn getMonAn() {

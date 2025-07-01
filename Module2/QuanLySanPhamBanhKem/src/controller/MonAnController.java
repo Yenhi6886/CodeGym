@@ -2,11 +2,12 @@ package controller;
 
 import model.MonAn;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
- * Lớp MonAnController quản lý danh sách ,Đảm nhiệm các chức năng thêm, sửa, xoá, khôi phục, tìm kiếm, đọc/ghi file cho món ăn.
- * Được sử dụng bởi lớp MainView để thao tác dữ liệu món ăn.
+ * Lớp MonAnController quản lý danh sách, đảm nhiệm các chức năng thêm, sửa, xoá, khôi phục,
+ * tìm kiếm theo ID hoặc tên, đọc/ghi file CSV cho món ăn.
  */
 public class MonAnController {
     private List<MonAn> danhSachMonAn = new ArrayList<>();
@@ -19,10 +20,9 @@ public class MonAnController {
         for (int i = 0; i < danhSachMonAn.size(); i++) {
             MonAn m = danhSachMonAn.get(i);
             if (m.getId().equalsIgnoreCase(id)) {
-                // Giữ trạng thái đã xóa
                 boolean daXoa = m.isDaXoa();
+                monAnMoi.setDaXoa(daXoa);
                 danhSachMonAn.set(i, monAnMoi);
-                danhSachMonAn.get(i).setDaXoa(daXoa);
                 return true;
             }
         }
@@ -31,59 +31,80 @@ public class MonAnController {
 
     public boolean xoaMonAn(String id) {
         MonAn monAn = timTheoId(id);
-        if (monAn == null) {
-            return false;
-        } else {
-            monAn.setDaXoa(true);
-            return true;
-        }
+        if (monAn == null) return false;
+        monAn.setDaXoa(true);
+        return true;
     }
 
     public MonAn timTheoId(String id) {
+        return danhSachMonAn.stream()
+                .filter(m -> m.getId().equalsIgnoreCase(id))
+                .findFirst().orElse(null);
+    }
+
+    /**
+     * Tìm món ăn theo tên chứa chuỗi key (ignore case)
+     */
+    public List<MonAn> timTheoTen(String key) {
+        String k = key.toLowerCase();
+        List<MonAn> result = new ArrayList<>();
         for (MonAn m : danhSachMonAn) {
-            if (m.getId().equalsIgnoreCase(id)) return m;
+            if (!m.isDaXoa() && m.getTen().toLowerCase().contains(k)) {
+                result.add(m);
+            }
         }
-        return null;
+        return result;
     }
 
     public boolean khoiPhucMonAn(String id) {
         MonAn monAn = timTheoId(id);
-        if (monAn == null) {
-            return false;
-        } else if (!monAn.isDaXoa()) {
-            return false;
-        } else {
-            monAn.setDaXoa(false);
-            return true;
-        }
+        if (monAn == null || !monAn.isDaXoa()) return false;
+        monAn.setDaXoa(false);
+        return true;
     }
-
 
     public List<MonAn> getDanhSach() {
         return danhSachMonAn;
     }
 
+    /**
+     * Đọc file CSV: id,ma,ten,loai,gia,soLuong,moTa,daXoa
+     */
     public void docFile(String path) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path))) {
-            danhSachMonAn = (List<MonAn>) ois.readObject();
+        danhSachMonAn.clear();
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(
+                new FileInputStream(path), StandardCharsets.UTF_8))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] f = line.split(",", -1);
+                if (f.length < 8) continue;
+                // Đúng thứ tự: id,ma,ten,loai,gia,soLuong,moTa,daXoa
+                MonAn m = new MonAn(f[0], f[1], f[2], f[3],
+                        Double.parseDouble(f[4]), Integer.parseInt(f[5]), f[6]);
+                m.setDaXoa(Boolean.parseBoolean(f[7]));
+                danhSachMonAn.add(m);
+            }
         } catch (Exception e) {
-            System.out.println("Không thể đọc file: " + e.getMessage());
+            System.out.println("Không thể đọc file CSV: " + e.getMessage());
         }
     }
 
-    public void ghiFile(String path) {
-        try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), "UTF-8"))) {
+    /**
+     * Ghi file CSV: id,ma,ten,loai,gia,soLuong,moTa,daXoa
+     */
+    public void ghiFileText(String path) {
+        try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(path), StandardCharsets.UTF_8))) {
             for (MonAn m : danhSachMonAn) {
-                bw.write(String.format("%s,%s,%s,%s,%.2f,%d,%s",
-                        m.getId(), m.getMa(), m.getTen(), m.getLoai(), m.getGia(), m.getSoLuong(), m.getMoTa()));
+                bw.write(String.join(",",
+                        m.getId(), m.getMa(), m.getTen(), m.getLoai(),
+                        String.valueOf(m.getGia()), String.valueOf(m.getSoLuong()),
+                        m.getMoTa().replace(",", " "), String.valueOf(m.isDaXoa())
+                ));
                 bw.newLine();
             }
         } catch (Exception e) {
-            System.out.println("Không thể ghi file: " + e.getMessage());
+            System.out.println("Không thể ghi file CSV: " + e.getMessage());
         }
-    }
-
-    public void ghiFileText(String path) {
-        ghiFile(path);
     }
 }

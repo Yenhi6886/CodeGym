@@ -1,2 +1,31 @@
+A.
 1.Tách riêng việc validate dữ liệu và tìm kiếm khỏi MainController.
 2.vi phạm nguyên tắc S-vừa xử lý nhập liệu, vừa lưu file, vừa điều phối logic nghiệp vụ
+
+B. Các kiểm tra (validate) đã có cho 8 trường nhập khi thêm món ăn:
+1. ID:
+   - Kiểm tra ID đã tồn tại trong danh sách chưa (không cho trùng).
+2. Mã món ăn (ma):
+   - Kiểm tra định dạng bằng regex: phải là chữ cái + dấu gạch ngang + 4 chữ số (ví dụ: food-0001).
+5. Giá:
+   - Kiểm tra phải là số thực (double), nếu nhập sai định dạng sẽ yêu cầu nhập lại.
+   - Kiểm tra giá >= 0.
+6. Số lượng:
+   - Kiểm tra phải là số nguyên (int), nếu nhập sai định dạng sẽ yêu cầu nhập lại.
+   - Kiểm tra số lượng >= 0.
+8. (Khi lên đơn hàng) Số lượng mua:
+   - Kiểm tra phải là số nguyên > 0, không vượt quá số lượng còn lại của món ăn.
+   - Nếu nhập sai định dạng hoặc vượt quá số lượng sẽ yêu cầu nhập lại.
+3. Tên: ;4. Loại: ;7. Mô tả:
+   - Không kiểm tra, chỉ nhập tự do.
+
+C. chưa dùng đúng loại stream cho từng định dạng file.
+
+D. 1.Xác thực người dùng và vai trò: Cho phép các loại người dùng khác nhau (quản trị viên, nhân viên, khách hàng) có quyền phù hợp.
+   2.Xuất/nhập dữ liệu: Hỗ trợ xuất và nhập dữ liệu ở các định dạng như CSV, Excel hoặc PDF.
+   3.Tích hợp cơ sở dữ liệu: Thay thế lưu trữ dựa trên tệp bằng cơ sở dữ liệu quan hệ (ví dụ: MySQL, PostgreSQL) để có khả năng mở rộng và độ tin cậy tốt hơn.
+  - 4.Báo cáo và thống kê: Tạo báo cáo bán hàng, thống kê hàng tồn kho và phân tích khách hàng.
+  - 6.Lịch sử đơn hàng và theo dõi: Cho phép người dùng xem các đơn hàng trước đây và theo dõi các đơn hàng hiện tại.
+   7.Quản lý hàng tồn kho: Thêm các tính năng để tự động cập nhật hàng tồn kho, cảnh báo hàng tồn kho thấp và quản lý nhà cung cấp.
+   8.Sao lưu và khôi phục: Triển khai chức năng sao lưu và khôi phục dữ liệu.
+   9.Hỗ trợ đa ngôn ngữ: Hỗ trợ nhiều ngôn ngữ để có khả năng truy cập rộng hơn.

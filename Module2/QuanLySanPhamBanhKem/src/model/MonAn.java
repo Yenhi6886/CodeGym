@@ -59,7 +59,7 @@ public class MonAn implements Serializable {
         this.loai = loai;
     }
 
-    public double getGia() {
+    public Object getGia() {
         return gia;
     }
 
@@ -67,7 +67,7 @@ public class MonAn implements Serializable {
         this.gia = gia;
     }
 
-    public int getSoLuong() {
+    public Object getSoLuong() {
         return soLuong;
     }
 
@@ -94,6 +94,6 @@ public class MonAn implements Serializable {
     @Override
     public String toString() {
         return String.format("ID: %s | Mã: %s | Tên: %s | Loại: %s | Giá: %.2f | SL: %d | Mô tả: %s",
-                id, ma, ten, loai, gia, soLuong, moTa);
+                (Object) id, ma, ten, loai, gia, soLuong, moTa);
     }
 }

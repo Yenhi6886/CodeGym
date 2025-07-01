@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -15,9 +16,10 @@ public class DonHang implements Serializable {
     public String diaChi;
     public List<ItemDonHang> danhSachMon;
     public double tongTien;
-    public Date ngayDat;
+    public LocalDate ngayDat;
     public String trangThai;
 
+    // Constructor mặc định cho tạo mới (ngày hiện tại)
     public DonHang(String ma, String tenNguoiMua, String sdt, String diaChi,
                    List<ItemDonHang> danhSachMon, String trangThai) {
         this.ma = ma;
@@ -26,7 +28,20 @@ public class DonHang implements Serializable {
         this.diaChi = diaChi;
         this.danhSachMon = danhSachMon;
         this.tongTien = tinhTongTien();
-        this.ngayDat = new Date();
+        this.ngayDat = LocalDate.now();
+        this.trangThai = trangThai;
+    }
+
+    // Constructor cho đọc file (ngày đặt truyền vào)
+    public DonHang(String ma, String tenNguoiMua, String sdt, String diaChi,
+                   List<ItemDonHang> danhSachMon, String trangThai, LocalDate ngayDat) {
+        this.ma = ma;
+        this.tenNguoiMua = tenNguoiMua;
+        this.sdt = sdt;
+        this.diaChi = diaChi;
+        this.danhSachMon = danhSachMon;
+        this.tongTien = tinhTongTien();
+        this.ngayDat = ngayDat;
         this.trangThai = trangThai;
     }
 
@@ -37,6 +52,16 @@ public class DonHang implements Serializable {
         }
         return sum;
     }
+
+    // Getter cho controller sử dụng
+    public String getMa() { return ma; }
+    public String getTenNguoiMua() { return tenNguoiMua; }
+    public String getSdt() { return sdt; }
+    public String getDiaChi() { return diaChi; }
+    public List<ItemDonHang> getDanhSachMon() { return danhSachMon; }
+    public double getTongTien() { return tongTien; }
+    public LocalDate getNgayDat() { return ngayDat; }
+    public String getTrangThai() { return trangThai; }
 
     @Override
     public String toString() {
